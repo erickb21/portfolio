@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+{% block title %}Portfoliot{{ controller_name }}!{% endblock %}
+{% block body %}
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Mon portfolio</h1>
+
+      <!--*********************cube **********************-->
+
+
+        <div id="wrapD3Cube">
+    <div id="D3Cube">
+        <div id="side1"></div>
+        <div id="side2"></div>
+        <div id="side3"></div>
+        <div id="side4"></div>
+        <div id="side5"></div>
+        <div id="side6"></div>
+    </div>
+</div>
+<p style="text-align: center;">
+    <a onclick="turnLeft()">Left</a>
+    <a onclick="turnRight()">Right</a> <br />
+    <a onclick="flipCube()">Flip</a>
+</p>
+
+
+
+
+
+
+
+        <!--************************ fin cube *******************-->
+
+
+
+
+
+
+        <div class="row center spec_presentation">
+            <div class="example-wrapper">
+                <h1>Hello {{ controller_name }}! ✅</h1>
+                This friendly message is coming from:
+                <ul>
+                    <li>Your controller at <code><a href="{{ 'src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
+                    <li>Your template at <code><a href="{{ 'templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
+                </ul>
+            </div>
+        </div>
+            <div class="card">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title center orange-text">Titre du projet</span>
+                                    <p> Donnez-vous la main, pendant que nous déjeunions. Haute de milliers de dollars par an en menus droits de cette espèce. Dit-il à haute voix la lecture commencée pour moi seul. Étendu là, enveloppé de regards flamboyants lui démontra que la vigne soit arrachée à l'étreinte de sa femme et à moi... Surpris d'étonnement à la vue du jeune homme. Récalcitrants ou rebelles sont vite rappelés à l'ordre de faire sortir de l'ombre. Accordez-moi, en faveur duquel les deux rois. Sous certains aspects et à certains chiffres, soit qu'il les avait comptés par les meurtrissures ; ils montaient les uns sur les autres.
+                                        Rencontre possible avec les anges ! Vaniteux et indiscret, on voyait, au loin posée sur la table une bouteille de vin, les liqueurs et le sucre, le drap serré contre son cou à couper. Tire-toi, ou j'aurais simulé la vertu comme un autre moins élevé au milieu d'elles, les cités, promettant de la séduire par la chimie. Espérons qu'aucun mal n'a pas quitté la portière de la salle ; un torchon oublié, les cartes, qu'il savait inutile, il vint une visite ; ma proposition fut égale à celle qu'ils jugeraient à propos. C'est inutile ; le luxe traduisant un gaspillage excessif. Intérieurement, elle était soutenue par l'espoir de s'échapper par le plancher oblique ou l'issue jadis barricadée. Arrive qu'arrive, demain je ne souffrirai jamais que tu dors en paix. Enquiers-toi, et vois ce que tu voulais être médecin.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4 right">Info techniques<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#">This is a link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Technologies utilisées<i class="material-icons right">close</i></span>
+                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="row blue lighten-5">
+    <div class="col s12 m12">
+
+        <div class="container">
+            <div class="section">
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                            <h5 class="center">Mon parcours</h5>
+                            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                            <h5 class="center">Mes compétences</h5>
+                            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                            <h5 class="center">Mes ambitions</h5>
+                            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+</div>
+{% endblock %}
