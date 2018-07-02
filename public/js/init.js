@@ -28,3 +28,42 @@ function turnLeft() {
 function flipCube() {
     rotate("cubez", -180);
 }
+
+// #region Unfold
+
+
+var element = document.getElementsByClassName("unfoldmoreless");
+
+function unfoldmore(element) {
+    element.innerText = "unfold_more";
+}
+
+function unfoldLess(element) {
+    element.innerText = "unfold_less";
+    document.getElementById("maNav").classList.toggle("navover");
+}
+function unfoldMore(element) {
+    element.innerText = "unfold_more";
+//element.classList.remove("unfoldmore");
+
+    document.getElementById("maNav").classList.toggle("navover");
+//    element.classList.remove("unfoldmore");
+}
+
+
+element[0].addEventListener('mouseover', function (e) {
+    unfoldLess(element[0]);
+});
+
+element[0].addEventListener('mouseout', function (e) {
+    unfoldMore(element[0]);
+});
+
+// #endregion
+
+function scrollExperiences() { }
+
+
+
+
+

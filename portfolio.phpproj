@@ -131,6 +131,8 @@
     <Compile Include="config\services_test.yaml" />
     <Compile Include="public\index.php" />
     <Compile Include="src\Controller\.gitignore" />
+    <Compile Include="src\Controller\AppController.php" />
+    <Compile Include="src\Controller\IndexController.php" />
     <Compile Include="src\Entity\.gitignore" />
     <Compile Include="src\Migrations\.gitignore" />
     <Compile Include="src\Repository\.gitignore" />
@@ -909,6 +911,7 @@
     <Folder Include="src\Repository" />
     <Folder Include="src" />
     <Folder Include="templates" />
+    <Folder Include="templates\index\" />
     <Folder Include="tests" />
     <Folder Include="translations" />
     <Folder Include="var\cache\dev\ContainerVlN0TtB" />
@@ -1371,5 +1374,8 @@
     <Folder Include="var\cache" />
     <Folder Include="var\log" />
     <Folder Include="var" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\index\index.html.twig" />
   </ItemGroup>
 </Project>

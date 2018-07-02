@@ -18,7 +18,7 @@
     margin-top:10px;
 }
 
-.unfoldmore{
+.unfold{
 position: fixed;
 top:0px;
 left:95vw;
@@ -28,24 +28,29 @@ left:95vw;
     width:50px;
     height:50px;
 }
+
 .brand-logo {
     /*width: 50px;*/
     height: 50px;
 }
 
-
+.sidenav{
+    z-index:110;
+}
 nav {
     position: fixed;
     top: 0px;
     left: 0px;
     height: 64px;
     transition: height ease-in-out 1.2s;
+    z-index: 100;
 }
 
-    nav:hover {
-        height: 200px;
-        transition: height ease-in-out 1.2s;
-    }
+.navover {
+    height: 200px;
+    transition: height ease-in-out 1.2s;
+}
+
 
 .spec_presentation{
     height:100vh;
