@@ -13,15 +13,21 @@
 	font-size: inherit;
 }
 
-
-.paddingtop5{
-    margin-top:10px;
+.pagination li {
+    height: auto;
+}
+.paddingtop5 {
+    margin-top: 10px;
 }
 
-.unfold{
-position: fixed;
-top:0px;
-left:95vw;
+.paginationnumber {
+    height: auto;
+}
+
+.unfold {
+    position: fixed;
+    top: 0px;
+    left: 95vw;
 }
 
 .logo{
