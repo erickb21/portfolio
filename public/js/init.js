@@ -76,7 +76,7 @@ selectPage[0].dataset.number="active"
 
 
 function activeProjectPage(element) {
-    alert(selectPage.length);
+    //alert(selectPage.length);
 
     for (i = 0; i < selectPage.length; i++) {
         if (selectPage[i].dataset.number == "active") { selectPage[i].classList.remove("active");selectPage[i].dataset.number = "";element.classList.add("active"); element.dataset.number = "active"; /* */  }
