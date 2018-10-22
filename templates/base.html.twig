@@ -5,96 +5,137 @@
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Rajdhani|Quicksand" rel="stylesheet">
+    <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />-->
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     {% endblock %}
 </head>
 <body>
     {% block nav %}
-    <nav id="maNav" class="light-blue lighten-1 spec_fixednav" role="navigation">
-        <div class="unfold"><i class="material-icons white-text unfoldmoreless">unfold_more</i></div>
-        <div class="row" flex-v-middle>
+    <nav id="maNav" class="s_nav g_shadow light-blue lighten-1 g_colorwhite" role="navigation">
+        <div class="s_firstnav">
 
+            <div id="logo" class="s_blocNav f_pacifico_3rem">
+                <!--L'effet Erick&nbsp;<img class="s_logo" src="img/btfl.svg" alt="logo" />-->
+            </div>
 
-            <div class=" col s4 nav-wrapper container">
-                <div class="flex-v-middle">
-                    <a id="logo-container" href="#" class="brand-logo">L'effet Erick<img class="logo" src="img/btfl.svg" alt="logo" /></a>
+            <div class="s_blocNav g_txtcenter s_pages">
+                <p>Mes réalisations</p>
+                <div>
+                    <ul id="pagination" class="pagination"></ul>
                 </div>
             </div>
-            <div class="= coll s4  pag">
-                <ul class="pagination flex-v-middle">
-                    <li id="prec" class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                    <li data-number=""  class="waves-effect paginationnumber" onclick="activeProjectPage(this);"><a href="#!">1</a></li>
-                    <li data-number="" class="waves-effect paginationnumber" onclick="activeProjectPage(this)"><a href="#!">2</a></li>
-                    <li data-number="" class="waves-effect paginationnumber" onclick="activeProjectPage(this)"><a href="#!">3</a></li>
-                    <li data-number="" class="waves-effect paginationnumber" onclick="activeProjectPage(this)"><a href="#!">4</a></li>
-                    <li data-number="" class="waves-effect paginationnumber" onclick="activeProjectPage(this)"><a href="#!">5</a></li>
-                    <li id="next" class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            <div class="s_blocNav">
+                <ul class="">
+                    <li id="person" class="g_pointer show-on-large" onclick="MyScroll(document.getElementById('MonParcours').offsetTop - 30);">
+                        <!--Whois Erick BEAUGENDRE-->
+                    </li>
+                    <li id="burger" class="g_pointer hide-on-large-only g_svgIconWhite" >
+                    <!--menu burger action show mobile nav-->
+                    </li>
                 </ul>
             </div>
-
-            <div class="col s4">
-                <ul class="right hide-on-med-and-top ">
-                    <li><a href="#"><span class="material-icons white-text paddingtop5">person</span> Whois Erick Beaugendre</a></li>
-                </ul>
+            <div class="s_blocUnfold">
+                <div id="unfold" class="s_unfold g_pointer g_svgIconWhite" title="cliquez pour verrouiller le panneau"></div>
             </div>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="#"><span class="material-icons light-blue paddingtop5">person</span>Whois Erick Beaugendre</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
+        <div class="s_secondnav">
+            <div class="s_add_remove_project">
+                <div id="add_project" class="s_add_project g_pointer"></div>
+                <div id="deconnexion" class="s_closeAdmin g_displaynone g_pointer">déconnecter</div>
+                <div id="admin" class="s_admin">
+                    <input id="adminPWD" type="password" />
+                </div>
+                <div id="remove_project" class="s_remove_project g_pointer"></div>
+            </div>
+            <div id="connexion" class="s_enter g_pointer" onclick="findAdminPWD();">Connexion</div>
         </div>
-
     </nav>
+    <!-- #region Mobile -->
+    <nav id="nav-mobile" class="sidenav hide-on-large-only g_height82vh g_bgcolorwhite">
+        <ul>
+            <li class="hide-on-large-only"><div id="mobilePerson" class="mobilePerson g_pointer"><span id="personSideNav" class="g_svgIconWhite"></span>Whois Erick BEAUGENDRE</div></li>
+        </ul>
+        
+    </nav>
+    <!-- #endregion -->
+    <!-- #region MODAL -->
+    <!-- Trigger/Open The Modal <button id="myBtn">Open Modal</button> -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- #region Formulaire d'ajout de projet -->
+            <div id="zoneAdd">
+                <input id="titreProj" class="" name="titre" type="text" placeholder="Titre du projet" /><br /><br />
+                <textarea id="descriptionProj" class="" name="description" placeholder="description du projet"></textarea><br /><br />
+                <input id="dureproj" class="" name="dure_proj" type="text" placeholder="durée en jour" /><br /><br />
+                <input id="urlindexproj" class="" name="url_index" type="url" placeholder="http://" /><br /><br />
+                <input id="urlimageProj" type="file" name="url_image" placeholder="chemin du fichier d'image" /><br /><br /><br /><br />
+                <input class="g_pointer" type="button" value="Enregistrer" onclick="addProject();" /><br />
+            </div>
+            <!-- #endregion -->
+        </div>
+
+    </div>
+
+
+    <!-- #endregion -->
     {% endblock %}
 
 
     {% block body %}{% endblock %}
 
     {% block foot %}
-    <footer class="page-footer orange">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+    <footer class="footer g_width100vh">
+        <section class="page-footer g_width80vw">
+            <div class="contact g_width33prc g_padding30px">
+                <h1 class="white-text">Contact</h1>
+                <p class="grey-text text-lighten-4">16, rue de la foret</p>
+                <p class="grey-text text-lighten-4">21110 Longchamp</p>
+                <p class="grey-text text-lighten-4">BOURGOGNE-France</p>
+                <br />
+                <p class="grey-text text-lighten-4"><span id="phone"></span> 06 81 46 41 35</p>
+                <p class="grey-text text-lighten-4"><a href="mailto:erick.beaugendre@gmail.com"><span id="email"></span> erick.beaugendre@gmail.com</a></p>
 
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Reseaux sociaux</h5>
-                    <ul>
-                        <li><a id="logo-facebook" href="#" class="brand-logo"><img class="logo" src="img/facebook-logo.svg" alt="logo" /></a></li>
-                        <li><a id="logo-github" href="#" class="brand-logo"><img class="logo" src="img/github-sign.svg" alt="logo" /></a></li>
-                        <li><a id="logo-linkedin" href="#" class="brand-logo"><img class="logo" src="img/linked-in-square-button.svg" alt="logo" /></a></li>
-                        <li><a id="logo-twiter" href="#" class="brand-logo"><img class="logo" src="img/twitter-logo.svg" alt="logo" /></a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            <div class="reseauxSociaux g_width33prc g_padding30px">
+                <h1 class="white-text">Reseaux sociaux</h1>
+                <ul>
+                    <li><a id="logo-facebook" href="https://www.facebook.com/erick.beaugendre" target="_blank" class="brand-logo"><img class="logo" src="img/facebook-logo.svg" alt="logo" />Erick BEAUGENDRE</a></li>
+                    <li><a id="logo-github" href="https://github.com/erickb21" target="_blank" class="brand-logo"><img class="logo" src="img/github-sign.svg" alt="logo" />erickb21</a></li>
+                    <li><a id="logo-linkedin" href="https://www.linkedin.com/in/erick-beaugendre/" target="_blank" class="brand-logo"><img class="logo" src="img/linked-in-square-button.svg" alt="logo" />Erick BEAUGENDRE</a></li>
+                    <li><a id="logo-twiter" href="https://twitter.com/Erick_B21" target="_blank" class="brand-logo"><img class="logo" src="img/twitter-logo.svg" alt="logo" />Erick_B21</a></li>
+                </ul>
+            </div>
+            <div class="liens g_width33prc g_padding30px">
+                <h1 class="white-text">Connect</h1>
+                <ul>
+                    <li><a class="white-text" href="http://www.optimic.net" target="_blank">www.optimic.net</a></li>
+                    <li><a class="white-text" href="http://www.okiko.fr" target="_blank">okiko.fr</a></li>
+                    <!--<li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>-->
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer-copyright g_width100prc">
+            <div>
+                Made by <a class="orange-text text-lighten-3" href="#">Myself</a>
             </div>
         </div>
     </footer>
-
+    </div>
     {% endblock %}
+
 
 
     {% block javascripts %}
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
+    <script src="js/AjaxScripts.js"></script>
+
     <script src="js/init.js"></script>
     {% endblock %}
 </body>

@@ -1,110 +1,109 @@
 {% extends 'base.html.twig' %}
 {% block title %}Portfoliot{{ controller_name }}!{% endblock %}
 {% block body %}
-<div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <br><br>
-        <h1 class="header center orange-text">Mon portfolio</h1>
 
-      <!--*********************cube **********************-->
+<!-- #region Cube -->
+<div class="s_imgbackground">
+	<div id="wrapD3Cube">
+		<div id="D3Cube" class="g_width80vw">
+			<div id="side1">
+				<div class="s_contentSide g_height100prc g_width100prc">
+					<h1 class="titreProjet"></h1><span> (side1)</span>
+				</div>info<div class="triangle-code g_pointer"></div>
+			</div>
+			<div id="side2">
+				<div class="s_contentSide g_height100prc g_width100prc">
+					<h1 class="titreProjet"></h1><span> (side2)</span>
+					<h2>Contexte technique</h2>
+					<p id="techno"></p>
+				</div>info<div class="triangle-code g_pointer"></div>
+			</div>
+			<div id="side3">
+				<!--diapo 1-->
+				<div class="s_contentSide g_height100prc g_width100prc">
+					<h1 class="titreProjet"></h1> <span> (side3)</span>
+					<h2>Description et contexte de réalisation</h2>
+					<p id="description"></p>
+				</div>info<div class="triangle-code g_pointer"></div>
+			</div>
 
+			<div id="side4"><div class="s_contentSide g_height100prc g_width100prc"><h1 class="titreProjet"></h1><span> (side4)</span></div>info<div class="triangle-code g_pointer"></div></div>
+			<div id="side5"><div class="s_contentSide g_height100prc g_width100prc"><h1 class="titreProjet"></h1><span> (side5)</span></div>info<div class="triangle-code g_pointer"></div></div>
+			<div id="side6"><div class="s_contentSide g_height100prc g_width100prc"><h1 class="titreProjet"></h1><span> (side6)</span></div>info<div class="triangle-code g_pointer"></div></div>
+		</div>
+	</div>
+	<div class="s_controlPannelContainer">
+		<div class="s_controlPannel g_padding5px">
+			<p class="g_txtcenter">
+				<a id="playBefore" class="g_svgIconWhite" onclick="turnLeft()">Left</a>
+				<a id="playNext" class="g_svgIconWhite" onclick="turnRight()">Right</a> <br />
+				<!--<a id="playFlip" class="g_svgIconWhite" onclick="flipCube()">Flip</a>-->
+				<a id="launch" href="" class="g_svgIconWhite" target="_blank">Flip</a>
+			</p>
+		</div>
+	</div>
+	<!--<div class="example-wrapper">
+		<h1>Hello { controller_name }}! ✅</h1>
+		This friendly message is coming from:
+		<ul>
+			<li>Your controller at <code><a href="{ 'src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
+			<li>Your template at <code><a href="{ 'templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
+		</ul>
+	</div>-->
+	<!-- #endregion fin cube-->
+	<!-- #region Whois Erick BEAUGENDRE -->
 
-        <div id="wrapD3Cube">
-    <div id="D3Cube">
-        <div id="side1"></div>
-        <div id="side2"></div>
-        <div id="side3"></div>
-        <div id="side4"></div>
-        <div id="side5"></div>
-        <div id="side6"></div>
-    </div>
+	<div id="MonParcours" class="g_width100vw g_flexjustifycenter s_monParcours ">
+		<div class="s_whoisContainer g_width80vw monparcour-on-small-column">
+			<section class="g_width33prc g_padding30px column-on-small" onclick="MyScroll(this.offsetTop);">
+				<div class="icon-block">
+					<p class="center light-blue-text"><i class="material-icons">flash_on</i></p>
+					<h1 class="center">Mon parcours</h1>
+					<h2>Formation initiale</h2>
+
+					<p>Menuisier, ébéniste, Techniques industrielles d'agencement et de mobilier.</p>
+					<h2>Formation continue</h2>
+					<p>Cursus CNAM informatique de gestion + Psychologie du travail, gestion-comptabilité, management, gestion de projets</p>
+					<h2>Expériences professionnelles</h2>
+					<p>Menuiserie, ébénisterie, commande numérique, coordination de chantier et d'atelier, étude de prix.</p>
+					<p>Chargé de l'informatisation PME, développement de programmes de gestion.</p>
+					<p>Consultant/formateur pour un cabinet d'ingénierie sociale : conduite du changement, formation, rédaction et PAO de documentation utilisateur et supports de formation.</p>
+					<p>Créateur et gérant de SARL : conseil, formation, développement informatique et multimédia (supports web, print, cd-rom DVDRom).</p>
+				</div>
+			</section>
+
+			<section id="Competences" class="mesCompetences g_width33prc g_padding30px column-on-small">
+				<div class="icon-block">
+					<p class="center light-blue-text"><i class="material-icons">group</i></p>
+					<h1 class="center">Mes compétences</h1>
+					<h2>Avant la formation</h2>
+					<p>Développement VB.NET desktop, développement VBA Microsoft Office (Excel, Access, Word, ...)</p>
+					<p>Développement Web ASP.net, VB.net, html, CSS, JavaScript, BDD Firebird, MS SQLServer.</p>
+					<p>Administration de serveur IIS, serveur de mail MailEnable, avec ou sans utilisation de Plesk.</p>
+					<h2>Acquises durant la formation</h2>
+					<p>Html5, css3, svg, php, gitHub</p>
+					<p>Frameworks CSS/javascript : Bootstrap, Materialize, jQuerry, etc …</p>
+					<p>Frameworks PHP : synfony, CMS Wordpress.</p>
+					<p>Méthodes POO, OOCSS, architecture MVC.</p>
+					<p>Utilisation Wamp/Xamp.</p>
+				</div>
+			</section>
+			<section id="Projets" class="mesProjets g_width33prc g_padding30px column-on-small">
+				<div class="icon-block">
+					<p class="center light-blue-text"><i class="material-icons">settings</i></p>
+					<h1 class="center">Mes projets et ambitions</h1>
+
+					<h2>A court terme</h2>
+					<p>Trouver un emploi designer web / développer web</p>
+					<h2>Moyen et long terme</h2>
+					<p>Création d'une agence de communication digitale en collaboration avec graphiste</p>
+					<p>Développement d'une plateforme de gestion d'achats mutualisés, et vente en ligne, d'organisation d'évènement destinée à des artisans d'art. (projet en cours de développement 80% avant version Alpha)</p>
+
+				</div>
+			</section>
+
+		</div>
+	</div>
 </div>
-<p style="text-align: center;">
-    <a onclick="turnLeft()">Left</a>
-    <a onclick="turnRight()">Right</a> <br />
-    <a onclick="flipCube()">Flip</a>
-</p>
-
-
-
-
-
-
-
-        <!--************************ fin cube *******************-->
-
-
-
-
-
-
-        <div class="row center spec_presentation">
-            <div class="example-wrapper">
-                <h1>Hello {{ controller_name }}! ✅</h1>
-                This friendly message is coming from:
-                <ul>
-                    <li>Your controller at <code><a href="{{ 'src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-                    <li>Your template at <code><a href="{{ 'templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-                </ul>
-            </div>
-        </div>
-            <div class="card">
-                    <div class="row">
-                        <div class="col s12 m12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <span class="card-title center orange-text">Titre du projet</span>
-                                    <p> Donnez-vous la main, pendant que nous déjeunions. Haute de milliers de dollars par an en menus droits de cette espèce. Dit-il à haute voix la lecture commencée pour moi seul. Étendu là, enveloppé de regards flamboyants lui démontra que la vigne soit arrachée à l'étreinte de sa femme et à moi... Surpris d'étonnement à la vue du jeune homme. Récalcitrants ou rebelles sont vite rappelés à l'ordre de faire sortir de l'ombre. Accordez-moi, en faveur duquel les deux rois. Sous certains aspects et à certains chiffres, soit qu'il les avait comptés par les meurtrissures ; ils montaient les uns sur les autres.
-                                        Rencontre possible avec les anges ! Vaniteux et indiscret, on voyait, au loin posée sur la table une bouteille de vin, les liqueurs et le sucre, le drap serré contre son cou à couper. Tire-toi, ou j'aurais simulé la vertu comme un autre moins élevé au milieu d'elles, les cités, promettant de la séduire par la chimie. Espérons qu'aucun mal n'a pas quitté la portière de la salle ; un torchon oublié, les cartes, qu'il savait inutile, il vint une visite ; ma proposition fut égale à celle qu'ils jugeraient à propos. C'est inutile ; le luxe traduisant un gaspillage excessif. Intérieurement, elle était soutenue par l'espoir de s'échapper par le plancher oblique ou l'issue jadis barricadée. Arrive qu'arrive, demain je ne souffrirai jamais que tu dors en paix. Enquiers-toi, et vois ce que tu voulais être médecin.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4 right">Info techniques<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Technologies utilisées<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-    </div>
-</div>
-<div class="row blue lighten-5">
-    <div class="col s12 m12">
-
-        <div class="container">
-            <div class="section">
-                <!--   Icon Section   -->
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-                            <h5 class="center">Mon parcours</h5>
-                            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-                            <h5 class="center">Mes compétences</h5>
-                            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                            <h5 class="center">Mes ambitions</h5>
-                            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </div>
-
-</div>
+<!-- #endregion -->
 {% endblock %}
