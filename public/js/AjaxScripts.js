@@ -53,7 +53,17 @@ function addProject() {
 function initProjects() {
     var data = "userRequest=initProjects";
     resizePagination(window.innerWidth);
-    sendAjax(data, "scriptsphp/load.php", "initProjects");
+// affecte l'événement clic à chaque face du cube et masque l'image
+    //imgside = document.querySelectorAll(".img_side");
+    //for (i = 0; i < imgside.length; i++) {
+    //    imgside[i].addEventListener('click', function (e) {
+    //        //alert(imgside[0]);
+    //        //console.log(imgside[i]);
+    //        imgside[i].style.visibility = "hidden";
+    //    });
+    //}
+    sendAjax(data, "scriptsphp/load.php", "initProjects"); // appelle la finction ajax qui va lire les projets
+
 }
 
 

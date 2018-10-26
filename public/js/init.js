@@ -4,6 +4,11 @@
     //}); // end of document ready
 })(jQuery); // end of jQuery name space
 
+var imgside = document.querySelectorAll(".img_side");
+
+
+
+
 initProjects();
 // #region Variables img SVG
 
@@ -34,6 +39,8 @@ document.getElementById("launch").innerHTML = launch;
 // #endregion
 
 // #region Cube
+
+
 var cubex = 0,    // -22 initial rotation
     cubey = 0, //-38
     cubez = 0; //0
@@ -227,11 +234,35 @@ function activeProjectPage(element) {
              document.getElementById("moreNext").style.display = "none";
          } else { document.getElementById("next").classList.remove("disabled"); }
     }
+    //for (i = 0; i < imgside.length; i++) {
+    //    imgside[i].style.opacity = "1";
+    //}
+
+
 }
 
-//affichage des données
-function dataProjShow(element) {
+//affichage des données 
+var imgside = document.querySelectorAll(".img_side");
+//const imgsideToArray = Array.apply(null, imgside);
 
+
+//for (i = 0; i < imgsideToArray.length; i++) {
+//    imgsideToArray[i].addEventListener('click', function (e) {
+//       //alert(imgside[0]);
+//        console.log(imgsideToArray[i]);
+//        imgsideToArray[i].visibility = "hidden";
+        
+//    });
+
+//}
+//var imgside = document.getElementsByClassName("img_side");
+
+function dataProjShow(element) {
+    for (i = 0; i < imgside.length; i++) {
+
+        imgside[i].style.backgroundImage = "url('" + element.dataset.vignette + "')";
+        //alert(element.dataset.vignette);
+    }
     var projLabel = element.dataset.label;
     var titreProjet = document.getElementsByClassName("titreProjet");
 
@@ -244,10 +275,21 @@ function dataProjShow(element) {
     //ecriture des technos
     document.getElementById("techno").innerHTML = element.dataset.techno;
     document.getElementById("launch").href = element.dataset.location;
+   
+    //for (i = 0; i < imgside.length; i++) {
+    //    imgside[i].style.opacity = "0";
+    //}
 
 }
 
 
+function showHideImg (element){ 
+    //element.style.visibility = 'hidden';
+    if (element.style.opacity == "1") {
+        element.style.opacity = "0";
+    } else { element.style.opacity = "1"; }
+
+}
 
 // #endregion
 

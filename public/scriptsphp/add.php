@@ -15,24 +15,27 @@ $userRequest=strip_tags($_POST['userRequest']);
 $titreProj = strip_tags($_POST['titreProj']);
 $descriptionProj=strip_tags($_POST['descriptionProj']);
 $urlindexproj= strip_tags($_POST['urlindexproj']);
+$technoProj =strip_tags($_POST['technoProj']);
 $dureproj=strip_tags($_POST['dureproj']);
 $urlimageProj = strip_tags($_POST['urlimageProj']);
 
-//echo $titreProj . " & " .$descriptionProj . " & " . $urlindexproj . " & " . $dureproj . " & " .$urlimageProj; 
+//echo $titreProj . " & " .$descriptionProj . " & " . $urlindexproj . " & " . $dureproj . " & " .$urlimageProj;
 
 $res = $bdd->prepare(
 "insert into projets(
 label_proj,
 description_proj,
+techno_proj,
 location_proj,
 duree_proj,
-vignette_proj) 
+vignette_proj)
 
-VALUES ( :titreProj , :descriptionProj , :urlindexproj ,  :dureproj , :urlimageProj)");
-      
+VALUES ( :titreProj , :descriptionProj , :technoProj, :urlindexproj ,  :dureproj , :urlimageProj)");
 
-$res->bindValue( ':titreProj', $titreProj, PDO::PARAM_STR); 
+
+$res->bindValue( ':titreProj', $titreProj, PDO::PARAM_STR);
 $res->bindValue( ':descriptionProj', $descriptionProj, PDO::PARAM_STR);
+$res->bindValue( ':technoProj', $technoProj, PDO::PARAM_STR);
 $res->bindValue( ':urlindexproj', $urlindexproj, PDO::PARAM_STR);
 $res->bindValue( ':dureproj', $dureproj, PDO::PARAM_STR);
 $res->bindValue( ':urlimageProj', $urlimageProj,PDO::PARAM_STR);

@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\public",
+    "\\public\\js",
     "\\src",
     "\\templates",
     "\\templates\\index"
   ],
-  "SelectedNode": "\\public\\index.php",
+  "SelectedNode": "\\public\\js\\init.js",
   "PreviewInSolutionExplorer": false
 }

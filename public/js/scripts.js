@@ -30,7 +30,7 @@ function dragImg(ev) {
 
 function dragImg2(ev) {
     ev.target.src = "images/bravo_105.gif";
-        ev.target.style.width = "auto";
+    ev.target.style.width = "auto";
     ev.target.style.height = "auto";
     ev.dataTransfer.setData("text", ev.target.id);
 }
